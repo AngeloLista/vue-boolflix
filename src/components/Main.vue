@@ -1,12 +1,18 @@
 <template>
-  <main></main>
+  <main>
+    <FilmCard />
+  </main>
 </template>
 
 <script>
 import axios from "axios";
+import FilmCard from "./FilmCard.vue";
 
 export default {
   name: "Main",
+  components: {
+    FilmCard,
+  },
   data() {
     return {
       films: [],
@@ -38,5 +44,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped lang="scss">
+main {
+}
 </style>
