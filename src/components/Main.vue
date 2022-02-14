@@ -1,6 +1,6 @@
 <template>
   <main>
-    <FilmCard />
+    <FilmCard :films="films" />
   </main>
 </template>
 
@@ -16,7 +16,7 @@ export default {
   data() {
     return {
       films: [],
-      query: "prova",
+      query: "signore degli anelli",
       api_key: "536914e634dd4cef9d03dbc7349c9e01",
     };
   },
@@ -31,7 +31,7 @@ export default {
       //   };
       axios
         .get(
-          "https://api.themoviedb.org/3/search/movie?api_key=536914e634dd4cef9d03dbc7349c9e01&query=prova"
+          "https://api.themoviedb.org/3/search/movie?api_key=536914e634dd4cef9d03dbc7349c9e01&language=it-IT&query=signore degli anelli"
         )
         .then((res) => {
           this.films = res.data.results;
@@ -45,6 +45,4 @@ export default {
 </script>
 
 <style scoped lang="scss">
-main {
-}
 </style>
