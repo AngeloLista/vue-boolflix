@@ -7,8 +7,13 @@
 
       <!-- Search -->
       <div class="search-container d-flex align-items-center">
-        <input v-model="searchText" placeholder="Cerca un film" type="text" />
-        <input class="ms-1" type="button" />
+        <input
+          @keyup.enter="emitSearch"
+          v-model="searchText"
+          placeholder="Cerca un film"
+          type="text"
+        />
+        <button @click="emitSearch" class="ms-1">Cerca</button>
       </div>
     </div>
   </header>
@@ -21,6 +26,11 @@ export default {
     return {
       searchText: "",
     };
+  },
+  methods: {
+    emitSearch() {
+      this.$emit("search", this.searchText);
+    },
   },
 };
 </script>
