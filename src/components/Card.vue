@@ -8,11 +8,12 @@
       <span v-else>{{ item.original_language }}</span>
     </li>
     <li>
-      <i :class="isThisIconSolidOrRegular(starVote, 1)" class="fa-star"></i>
-      <i :class="isThisIconSolidOrRegular(starVote, 2)" class="fa-star"></i>
-      <i :class="isThisIconSolidOrRegular(starVote, 3)" class="fa-star"></i>
-      <i :class="isThisIconSolidOrRegular(starVote, 4)" class="fa-star"></i>
-      <i :class="isThisIconSolidOrRegular(starVote, 5)" class="fa-star"></i>
+      <i
+        v-for="(star, index) in 5"
+        :key="index"
+        :class="isThisIconSolidOrRegular(starVote, index + 1)"
+        class="fa-star"
+      ></i>
     </li>
   </ul>
 </template>
