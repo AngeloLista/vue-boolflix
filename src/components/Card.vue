@@ -7,7 +7,7 @@
       <img v-if="hasFlag" :src="flagSrc" :alt="item.original_language" />
       <span v-else>{{ item.original_language }}</span>
     </li>
-    <li>{{ item.vote_average }}</li>
+    <li>{{ starVote }}</li>
   </ul>
 </template>
 
@@ -22,6 +22,9 @@ export default {
     };
   },
   computed: {
+    starVote() {
+      return Math.ceil(this.item.vote_average / 2);
+    },
     posterUrl() {
       return `${this.basePosterUrl}w342${this.item.poster_path}`;
     },
