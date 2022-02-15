@@ -7,7 +7,13 @@
       <img v-if="hasFlag" :src="flagSrc" :alt="item.original_language" />
       <span v-else>{{ item.original_language }}</span>
     </li>
-    <li>{{ starVote }}</li>
+    <li>
+      <i :class="isThisIconSolidOrRegular(starVote, 1)" class="fa-star"></i>
+      <i :class="isThisIconSolidOrRegular(starVote, 2)" class="fa-star"></i>
+      <i :class="isThisIconSolidOrRegular(starVote, 3)" class="fa-star"></i>
+      <i :class="isThisIconSolidOrRegular(starVote, 4)" class="fa-star"></i>
+      <i :class="isThisIconSolidOrRegular(starVote, 5)" class="fa-star"></i>
+    </li>
   </ul>
 </template>
 
@@ -20,6 +26,11 @@ export default {
       flags: ["it", "en"],
       basePosterUrl: "https://image.tmdb.org/t/p/",
     };
+  },
+  methods: {
+    isThisIconSolidOrRegular(vote, index) {
+      return vote >= index ? "fa-solid" : "fa-regular";
+    },
   },
   computed: {
     starVote() {
