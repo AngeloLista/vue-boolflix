@@ -18,14 +18,10 @@ export default {
   components: {
     Search,
   },
-  data() {
-    return {
-      searchText: "",
-    };
-  },
+
   methods: {
-    emitSearch() {
-      this.$emit("search", this.searchText);
+    emitSearch(searchText) {
+      this.$emit("search", searchText);
     },
   },
 };
