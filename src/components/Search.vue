@@ -2,7 +2,7 @@
   <div class="search-container d-flex align-items-center">
     <input
       @keyup.enter="emitSearch"
-      v-model="searchText"
+      v-model.trim="searchText"
       placeholder="Cerca un film"
       type="text"
     />

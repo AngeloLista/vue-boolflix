@@ -27,6 +27,7 @@ export default {
   data() {
     return {
       movies: [],
+      series: [],
       api: {
         language: "it-IT",
         key: "536914e634dd4cef9d03dbc7349c9e01",
@@ -36,8 +37,14 @@ export default {
   },
   methods: {
     search(searchText) {
-      console.log(searchText);
-      const { key, baseUri, language } = this.api;
+      if (!searchText) {
+        this.movies = [];
+        this.series = [];
+        return;
+      }
+
+      const { key, language } = this.api;
+
       const config = {
         params: {
           language,
@@ -46,10 +53,15 @@ export default {
         },
       };
 
+      this.fetchApi("search/movie", config, "movies");
+      this.fetchApi("search/tv", config, "series");
+    },
+
+    fetchApi(endpoint, config, target) {
       axios
-        .get(`${baseUri}/search/movie`, config)
+        .get(`${this.api.baseUri}/${endpoint}`, config)
         .then((res) => {
-          this.movies = res.data.results;
+          this[target] = res.data.results;
         })
         .catch((err) => {
           console.log(err);
