@@ -6,22 +6,18 @@
       <div class="logo h1">BOOLFLIX</div>
 
       <!-- Search -->
-      <div class="search-container d-flex align-items-center">
-        <input
-          @keyup.enter="emitSearch"
-          v-model="searchText"
-          placeholder="Cerca un film"
-          type="text"
-        />
-        <button @click="emitSearch" class="ms-1">Cerca</button>
-      </div>
+      <Search />
     </div>
   </header>
 </template>
 
 <script>
+import Search from "./Search.vue";
 export default {
   name: "Header",
+  components: {
+    Search,
+  },
   data() {
     return {
       searchText: "",
