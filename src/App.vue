@@ -1,13 +1,7 @@
 <template>
   <div id="app">
     <Header @search="search" />
-    <Main />
-    <ul v-for="movie in movies" :key="movie.id">
-      <li>{{ movie.title }}</li>
-      <li>{{ movie.original_title }}</li>
-      <li>{{ movie.original_language }}</li>
-      <li>{{ movie.vote_average }}</li>
-    </ul>
+    <Main :movies="movies" :series="series" />
   </div>
 </template>
 
