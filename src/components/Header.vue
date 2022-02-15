@@ -6,7 +6,7 @@
       <div class="logo h1">BOOLFLIX</div>
 
       <!-- Search -->
-      <Search />
+      <Search @search="emitSearch" />
     </div>
   </header>
 </template>

@@ -13,6 +13,16 @@
 <script>
 export default {
   name: "Search",
+  data() {
+    return {
+      searchText: "",
+    };
+  },
+  methods: {
+    emitSearch() {
+      this.$emit("search", this.searchText);
+    },
+  },
 };
 </script>
 
