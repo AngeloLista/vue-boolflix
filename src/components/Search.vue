@@ -36,13 +36,14 @@ export default {
   width: 300px;
   border: 0;
   background-color: $bg_color;
-  color: rgb(199, 199, 199);
+  color: $secondary_color;
   padding-left: 5px;
   border-radius: 5px;
 }
 button {
   background-color: $bg_color;
   border: 0;
-  color: rgb(199, 199, 199);
+  color: $secondary_color;
+  border-radius: 5px;
 }
 </style>
