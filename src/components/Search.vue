@@ -30,12 +30,19 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "../assets/scss/vars.scss";
+
 .search-input {
   width: 300px;
   border: 0;
+  background-color: $bg_color;
+  color: rgb(199, 199, 199);
+  padding-left: 5px;
+  border-radius: 5px;
 }
 button {
+  background-color: $bg_color;
   border: 0;
-  color: gray;
+  color: rgb(199, 199, 199);
 }
 </style>
