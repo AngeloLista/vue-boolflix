@@ -56,7 +56,10 @@ export default {
       return Math.ceil(this.item.vote_average / 2);
     },
     posterUrl() {
-      return `${this.basePosterUrl}w342${this.item.poster_path}`;
+      if (this.item.poster_path != null) {
+        return `${this.basePosterUrl}w342${this.item.poster_path}`;
+      }
+      return `https://i.pinimg.com/originals/aa/f7/05/aaf705e06726ce3881288ae4be3ac5fe.jpg`;
     },
     flagSrc() {
       return require(`@/assets/img/${this.item.original_language}.png`);
@@ -69,9 +72,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.defaultPoster {
-  background-image: url("https://i.pinimg.com/originals/aa/f7/05/aaf705e06726ce3881288ae4be3ac5fe.jpg");
-}
 .card {
   display: inline-block;
   margin: 30px;
