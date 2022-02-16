@@ -3,10 +3,13 @@
     <input
       @keyup.enter="emitSearch"
       v-model.trim="searchText"
-      placeholder="Cerca un film"
+      placeholder="Cerca un film o una serie tv"
       type="text"
+      class="search-input"
     />
-    <button @click="emitSearch" class="ms-1">Cerca</button>
+    <button @click="emitSearch" class="ms-1">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
   </div>
 </template>
 
@@ -26,5 +29,13 @@ export default {
 };
 </script>
 
-<style>
+<style scoped lang="scss">
+.search-input {
+  width: 300px;
+  border: 0;
+}
+button {
+  border: 0;
+  color: gray;
+}
 </style>

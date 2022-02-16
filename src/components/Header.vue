@@ -1,7 +1,13 @@
 <template>
   <header>
     <div
-      class="container d-flex align-items-center justify-content-between h-100"
+      class="
+        container-fluid
+        d-flex
+        align-items-center
+        justify-content-between
+        h-100
+      "
     >
       <div class="logo h1">BOOLFLIX</div>
 
@@ -35,6 +41,7 @@ header {
   background-color: #000;
   .logo {
     color: $main_color;
+    user-select: none;
   }
 }
 </style>
