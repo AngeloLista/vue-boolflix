@@ -94,11 +94,11 @@ export default {
     align-items: center;
     padding: 15px;
     text-align: center;
-    background-color: black;
+    background-color: rgba($color: #000000, $alpha: 0.85);
     border-radius: 15px;
     opacity: 0;
     &:hover {
-      opacity: 0.85;
+      opacity: 1;
       transition: 0.3s;
     }
     .title {
