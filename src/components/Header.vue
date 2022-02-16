@@ -9,7 +9,13 @@
         h-100
       "
     >
-      <div class="logo h1">BOOLFLIX</div>
+      <div class="logo h-100">
+        <img
+          class="img-fluid h-100"
+          src="../assets/img/logo.png"
+          alt="Boolflix logo"
+        />
+      </div>
 
       <!-- Search -->
       <Search @search="emitSearch" />
