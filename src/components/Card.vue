@@ -82,7 +82,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 15px;
-  border: 1px solid rgb(214, 214, 214);
+  border: 1px solid rgb(100, 100, 100);
   img {
     object-fit: fill;
     border-radius: 15px;
@@ -97,6 +97,10 @@ export default {
     background-color: rgba($color: #000000, $alpha: 0.85);
     border-radius: 15px;
     opacity: 0;
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
     &:hover {
       opacity: 1;
       transition: 0.3s;
@@ -123,6 +127,18 @@ export default {
       margin-top: 10px;
       padding-left: 15px;
       padding-right: 15px;
+    }
+    // Custom Scroll Bar
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 3px grey;
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #a8a8a8;
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #757575;
     }
   }
 }
