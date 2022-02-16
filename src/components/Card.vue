@@ -11,7 +11,7 @@
           {{ item.original_title || item.original_name }}
         </p>
       </div>
-      <div>
+      <div class="flag-rating-container">
         <img
           class="flag"
           v-if="hasFlag"
@@ -42,7 +42,7 @@ export default {
   props: ["item"],
   data() {
     return {
-      flags: ["it", "en"],
+      flags: ["it", "en", "es", "fr", "de", "pt", "ja"],
       basePosterUrl: "https://image.tmdb.org/t/p/",
     };
   },
