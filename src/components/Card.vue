@@ -59,10 +59,10 @@ export default {
       if (this.item.poster_path != null) {
         return `${this.basePosterUrl}w342${this.item.poster_path}`;
       }
-      return `https://i.pinimg.com/originals/aa/f7/05/aaf705e06726ce3881288ae4be3ac5fe.jpg`;
+      return `https://cloud.filmfed.com/defaults/movie-poster/m_movie_poster_default.png`;
     },
     flagSrc() {
-      return require(`@/assets/img/${this.item.original_language}.png`);
+      return require(`../assets/img/${this.item.original_language}.png`);
     },
     hasFlag() {
       return this.flags.includes(this.item.original_language);
